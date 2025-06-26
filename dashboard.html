@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Real-Time Dashboard</h1>
+    <div id="time">Loading...</div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleTimeString();
+        }
+
+        function changeColor() {
+            const hue = Math.floor(Math.random() * 360);
+            document.body.style.backgroundColor = `hsl(${hue}, 70%, 90%)`;
+        }
+
+        function tick() {
+            updateTime();
+            changeColor();
+        }
+
+        tick();
+        setInterval(tick, 1000);
+    </script>
+</body>
+</html>
